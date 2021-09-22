@@ -12,8 +12,10 @@ namespace myBank
             ContaCorrente contaDoJoao = new ContaCorrente("João",1234,790,120);
             ContaCorrente contaDaMaria = new ContaCorrente("Maria",1234,791,150);
 
-            contaDoMarco.Sacar(50);
-            Console.WriteLine("O saldo da conta do Marco é:R$"+ contaDoMarco.get(return saldo;));
+            contaDoJoao.Trasnferir(120, contaDoMarco); 
+            Console.WriteLine("O saldo da conta do João é:R$"+ contaDoJoao.Saldo);
+            Console.WriteLine("O saldo da conta do Marco é:R$"+ contaDoMarco.Saldo);
+            
 
         }
     }

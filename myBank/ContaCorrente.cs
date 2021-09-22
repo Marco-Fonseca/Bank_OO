@@ -1,43 +1,58 @@
 
 public class ContaCorrente
 {
-    public string titular;
-    public int agencia;
-    public int conta;
-    private double saldo {get; set;}
+    public string Titular {get; set;}
+    public int Agencia {get; set;}
+    public int Conta {get; set;}
+
+    private double _saldo;
+    public double Saldo 
+    {
+        get
+        {
+            return this._saldo;
+        }
+        set
+        {
+            if( value >= 0)
+            {
+                this._saldo = value;
+            }
+        }
+    }
 
     public ContaCorrente() {}
 
     public ContaCorrente(string titular, int agencia, int conta, double saldo)
     {
-        this.titular = titular;
-        this.agencia = agencia;
-        this.conta = conta;
-        this.saldo = saldo;
+        Titular = titular;
+        Agencia = agencia;
+        Conta = conta;
+        Saldo = saldo;
     }
 
 
     public bool Sacar(double valor)
     {
-        if(this.saldo < valor)
+        if(this.Saldo < valor)
         {
             return false;
         }   
         else 
         {
-            this.saldo -= valor;
+            this.Saldo -= valor;
             return true;
         }
     }
 
     public void Depositar(double valor)
     {
-        this.saldo += valor;
+        this.Saldo += valor;
     }
 
     public bool Trasnferir(double valor, ContaCorrente contaDestino)
     {
-        if (this.saldo < valor)
+        if (this.Saldo < valor)
         {
             return false;
         }
@@ -47,5 +62,5 @@ public class ContaCorrente
             contaDestino.Depositar(valor);
             return true;
         }
-    }
+    }   
 }
