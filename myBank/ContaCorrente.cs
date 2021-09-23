@@ -4,8 +4,10 @@ public class ContaCorrente
     public string Titular {get; set;}
     public int Agencia {get; set;}
     public int Conta {get; set;}
+    public static int TotalContaCriadas {get; set;}
 
     private double _saldo;
+
     public double Saldo 
     {
         get
@@ -23,12 +25,13 @@ public class ContaCorrente
 
     public ContaCorrente() {}
 
-    public ContaCorrente(string titular, int agencia, int conta, double saldo)
+    public ContaCorrente(string titular, int agencia, double saldo)
     {
         Titular = titular;
         Agencia = agencia;
-        Conta = conta;
         Saldo = saldo;
+
+        TotalContaCriadas ++;
     }
 
 
