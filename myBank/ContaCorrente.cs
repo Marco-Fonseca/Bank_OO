@@ -5,6 +5,7 @@ public class ContaCorrente
     public int Agencia {get; set;}
     public int Conta {get; set;}
     public static int TotalContaCriadas {get; set;}
+    public static double TotalDeComissao {get;set;}
 
     private double _saldo;
 
@@ -25,13 +26,16 @@ public class ContaCorrente
 
     public ContaCorrente() {}
 
-    public ContaCorrente(string titular, int agencia, double saldo)
+    public ContaCorrente(string titular, int agencia, double saldo, Funcionario funcionario )
     {
         Titular = titular;
         Agencia = agencia;
         Saldo = saldo;
 
         TotalContaCriadas ++;
+        TotalDeComissao += saldo * 0.01;
+
+        funcionario.Comissao += saldo * 0.01;
     }
 
 
