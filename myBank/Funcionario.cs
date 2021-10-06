@@ -6,13 +6,26 @@ public class Funcionario
     public double Salario {get;set;}
     public double Comissao {get;set;}
 
-    public Funcionario () {}
-
-    public Funcionario (string nome, string cpf, string cargo, double salario) 
+    private double _bonificacao;
+    
+    public double Bonificacao 
     {
-        Nome = nome;
-        CPF = cpf;
-        Cargo = cargo;
-        Salario = salario; 
+        get
+        {
+            return _bonificacao;
+        }
+        set
+        {
+            if (this.Cargo == "Vendedor")
+            {
+                _bonificacao += value * 0.02;
+            }
+
+            if(this.Cargo == "Diretor")
+            {
+                _bonificacao += value * 0.08;
+            }
+        }
     }
+
 }

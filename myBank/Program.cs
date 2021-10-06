@@ -8,9 +8,24 @@ namespace myBank
         static void Main(string[] args)
         {
             
-            Funcionario funcionarioPedro = new Funcionario("Pedro","123.123.123-12","Vendedor",1000);
-            Funcionario funcionarioJorge = new Funcionario("Jorge","321.321.321-21","Vendedor",1000);
-            
+            Funcionario funcionarioPedro = new Funcionario()
+            {
+                Nome = "Pedro",
+                CPF = "123.123.123-12",
+                Cargo = "Vendedor",
+                Salario = 1000
+            };
+            Funcionario funcionarioJorge = new Funcionario()
+            {
+                Nome = "Jorge",
+                CPF = "321.321.321-21",
+                Cargo = "Diretor",
+                Salario = 5000
+            };
+
+            funcionarioPedro.Bonificacao = funcionarioPedro.Salario;
+            funcionarioJorge.Bonificacao = funcionarioJorge.Salario;
+
             ContaCorrente contaDoMarco = new ContaCorrente("Marco",1234,100,funcionarioPedro);
             contaDoMarco.Conta = 789;
 
@@ -20,7 +35,12 @@ namespace myBank
             ContaCorrente contaDaMarcia = new ContaCorrente("Márcia",1234,150,funcionarioPedro);
             contaDaMarcia.Conta = 791;
 
-            Console.WriteLine("A Conta corrente 1 é a do:"+ contaDoMarco.Titular);
+            
+            Console.WriteLine("O Bonificação do Pedro é:"+ funcionarioPedro.Bonificacao);
+            Console.WriteLine("O Salario do Pedro é:"+ funcionarioPedro.Salario);
+
+
+            /*Console.WriteLine("A Conta corrente 1 é a do:"+ contaDoMarco.Titular);
             Console.WriteLine("A Conta corrente 2 é a do:"+ contaDoGustavo.Titular);
             Console.WriteLine("A Conta corrente 3 é a da:"+ contaDaMarcia.Titular);
             Console.WriteLine("----------------------------------------------------");
@@ -50,7 +70,7 @@ namespace myBank
            Console.WriteLine("O saldo da conta da Márcia é R$"+ contaDaMarcia.Saldo);
            Console.WriteLine("----------------------------------------------------");
 
-           Console.WriteLine("O número total de contas é:"+ ContaCorrente.TotalContaCriadas);
+           Console.WriteLine("O número total de contas é:"+ ContaCorrente.TotalContaCriadas);*/
         }
     }
 }
