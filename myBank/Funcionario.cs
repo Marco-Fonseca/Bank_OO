@@ -1,14 +1,13 @@
-public class Funcionario 
+public abstract class Funcionario 
 {
     public string Nome {get;set;}
     public string CPF {get;set;}
-    public string Cargo {get;set;}
     public double Salario {get;set;}
     public double Comissao {get;set;}
 
-    private double _bonificacao;
-    
-    public double Bonificacao 
+    protected double _bonificacao;
+
+    public virtual double Bonificacao 
     {
         get
         {
@@ -16,15 +15,7 @@ public class Funcionario
         }
         set
         {
-            if (this.Cargo == "Vendedor")
-            {
-                _bonificacao += value * 0.02;
-            }
-
-            if(this.Cargo == "Diretor")
-            {
-                _bonificacao += value * 0.08;
-            }
+                _bonificacao += value * 0.01;
         }
     }
 

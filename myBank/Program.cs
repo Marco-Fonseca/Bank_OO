@@ -7,26 +7,32 @@ namespace myBank
     {
         static void Main(string[] args)
         {
-            
-            Funcionario funcionarioPedro = new Funcionario()
+             Gerente gerenteHenrique = new Gerente (){
+
+                Nome = "Henrique",
+                CPF = "987.987.987-98",
+                Salario = 2000
+            };
+
+            Vendedor vendedorPedro = new Vendedor()
             {
                 Nome = "Pedro",
                 CPF = "123.123.123-12",
-                Cargo = "Vendedor",
                 Salario = 1000
             };
-            Funcionario funcionarioJorge = new Funcionario()
+            Vendedor vendedorJorge = new Vendedor()
             {
                 Nome = "Jorge",
                 CPF = "321.321.321-21",
-                Cargo = "Diretor",
-                Salario = 5000
+                Salario = 1000
             };
 
-            funcionarioPedro.Bonificacao = funcionarioPedro.Salario;
-            funcionarioJorge.Bonificacao = funcionarioJorge.Salario;
+            vendedorPedro.Bonificacao = vendedorPedro.Salario;
 
-            ContaCorrente contaDoMarco = new ContaCorrente("Marco",1234,100,funcionarioPedro);
+             Console.WriteLine("O salario do gerente Henrique é R$" + gerenteHenrique.Salario);
+             Console.WriteLine("O Bonificação do Pedro é:"+ vendedorPedro.Bonificacao);
+
+           /* ContaCorrente contaDoMarco = new ContaCorrente("Marco",1234,100,funcionarioPedro);
             contaDoMarco.Conta = 789;
 
             ContaCorrente contaDoGustavo = new ContaCorrente("Gustavo",1234,120,funcionarioJorge);
@@ -40,7 +46,7 @@ namespace myBank
             Console.WriteLine("O Salario do Pedro é:"+ funcionarioPedro.Salario);
 
 
-            /*Console.WriteLine("A Conta corrente 1 é a do:"+ contaDoMarco.Titular);
+            Console.WriteLine("A Conta corrente 1 é a do:"+ contaDoMarco.Titular);
             Console.WriteLine("A Conta corrente 2 é a do:"+ contaDoGustavo.Titular);
             Console.WriteLine("A Conta corrente 3 é a da:"+ contaDaMarcia.Titular);
             Console.WriteLine("----------------------------------------------------");
