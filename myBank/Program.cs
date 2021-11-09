@@ -72,7 +72,4 @@ namespace myBank
             Console.WriteLine("Gerente : \nNome: " + gerenteHenrique.Nome + ";" + "\nCPF: " + gerenteHenrique.CPF + ";" + "\nSalário: R$" + gerenteHenrique.Salario + ";" + "\nBonificação Anual R$: " + gerenteHenrique.Bonificacao + ";" + "\nRemuneração Total Anual: R$" + gerenteHenrique.RemuneracaoTotal(gerenteHenrique.Salario,gerenteHenrique.Bonificacao) + ";" + "\nDias de Férias: " + gerenteHenrique.CalcularFerias() + ".");
             Console.WriteLine("----------------------------------------------");
             Console.WriteLine("Total de contas criadas:" + ContaCorrente.TotalContaCriadas + ".");
-
-        }
-    }
-}
+        }}}
