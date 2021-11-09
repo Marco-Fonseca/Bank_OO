@@ -3,6 +3,7 @@ public class ContaCorrente
 {
     public string Titular {get; set;}
     public int Agencia {get; set;}
+    public string CPF {get;set;}
     public int Conta {get; set;}
     public static int TotalContaCriadas {get; set;}
     public static double TotalDeComissao {get;set;}
@@ -26,9 +27,10 @@ public class ContaCorrente
 
     public ContaCorrente() {}
 
-    public ContaCorrente(string titular, int agencia, double saldo, Funcionario funcionario )
+    public ContaCorrente(string titular, string cpf, int agencia, double saldo, Funcionario funcionario )
     {
         Titular = titular;
+        CPF = cpf;
         Agencia = agencia;
         Saldo = saldo;
 
